@@ -102,12 +102,12 @@ def generate_private_key(operation_id: int):
 
 
 class DNSChallengeNotFound(RuntimeError):
-    def __init__(domain, obj):
+    def __init__(self, domain, obj):
         super().__init__(f"Cannot find DNS challenges for {domain} in {obj}")
 
 
 class ChallengeNotFound(RuntimeError):
-    def __init__(domain, obj):
+    def __init__(self, domain, obj):
         super().__init__(f"Cannot find any challenges for {domain} in {obj}")
 
 
