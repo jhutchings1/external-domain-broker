@@ -204,8 +204,8 @@ def update_TXT_records(operation_id: int):
                             "ResourceRecords": [{"Value": f'"{contents}"'}],
                             "TTL": 60,
                         },
-                    },
-                ],
+                    }
+                ]
             },
             HostedZoneId=config_from_env().ROUTE53_ZONE_ID,
         )
@@ -352,10 +352,7 @@ def create_cloudfront_distribution(operation_id: int):
                             "HTTPPort": 80,
                             "HTTPSPort": 443,
                             "OriginProtocolPolicy": "https-only",
-                            "OriginSslProtocols": {
-                                "Quantity": 1,
-                                "Items": ["TLSv1.2"],
-                            },
+                            "OriginSslProtocols": {"Quantity": 1, "Items": ["TLSv1.2"]},
                             "OriginReadTimeout": 30,
                             "OriginKeepaliveTimeout": 5,
                         },
@@ -468,8 +465,8 @@ def create_ALIAS_records(operation_id: str):
                                 "EvaluateTargetHealth": False,
                             },
                         },
-                    },
-                ],
+                    }
+                ]
             },
             HostedZoneId=config_from_env().ROUTE53_ZONE_ID,
         )

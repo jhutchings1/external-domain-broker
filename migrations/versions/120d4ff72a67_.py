@@ -33,7 +33,7 @@ def upgrade():
             sa.Enum("IN_PROGRESS", "SUCCEEDED", "FAILED", name="operationstate"),
             nullable=False,
         ),
-        sa.ForeignKeyConstraint(["service_instance_id"], ["service_instance.id"],),
+        sa.ForeignKeyConstraint(["service_instance_id"], ["service_instance.id"]),
         sa.PrimaryKeyConstraint("id"),
     )
     with op.batch_alter_table("service_instance", schema=None) as batch_op:

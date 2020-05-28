@@ -261,4 +261,3 @@ def test_provision_happy_path(
     subtest_provision_waits_for_cloudfront_distribution(tasks, cloudfront)
     subtest_provision_provisions_ALIAS_record(tasks, route53)
     subtest_provision_marks_operation_as_succeeded(client, tasks)
-

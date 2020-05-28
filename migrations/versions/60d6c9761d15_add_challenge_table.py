@@ -31,7 +31,7 @@ def upgrade():
         sa.Column("domain", sa.String(), nullable=False),
         sa.Column("validation_domain", sa.String(), nullable=False),
         sa.Column("validation_contents", sa.Text(), nullable=False),
-        sa.ForeignKeyConstraint(["service_instance_id"], ["service_instance.id"],),
+        sa.ForeignKeyConstraint(["service_instance_id"], ["service_instance.id"]),
         sa.PrimaryKeyConstraint("id"),
     )
     # ### end Alembic commands ###

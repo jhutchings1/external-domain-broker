@@ -35,7 +35,7 @@ class FakeCloudFront(FakeAWS):
         )
 
     def expect_wait_for_distribution(
-        self, service_instance: ServiceInstance, distribution_id: str,
+        self, service_instance: ServiceInstance, distribution_id: str
     ):
         self.stubber.add_response(
             "get_distribution",
@@ -63,7 +63,7 @@ class FakeCloudFront(FakeAWS):
         )
 
     def _fake_distribution_config(
-        self, caller_reference: str, domains: List[str], iam_server_certificate_id: str,
+        self, caller_reference: str, domains: List[str], iam_server_certificate_id: str
     ) -> Dict[str, Any]:
         return {
             "CallerReference": caller_reference,
@@ -79,10 +79,7 @@ class FakeCloudFront(FakeAWS):
                             "HTTPPort": 80,
                             "HTTPSPort": 443,
                             "OriginProtocolPolicy": "https-only",
-                            "OriginSslProtocols": {
-                                "Quantity": 1,
-                                "Items": ["TLSv1.2"],
-                            },
+                            "OriginSslProtocols": {"Quantity": 1, "Items": ["TLSv1.2"]},
                             "OriginReadTimeout": 30,
                             "OriginKeepaliveTimeout": 5,
                         },

@@ -11,12 +11,7 @@ from sap.cf_logging import flask_logging
 # `flask db migrate`
 from broker import models  # noqa: F401
 from broker.api import API
-from broker.extensions import (
-    db,
-    huey,
-    config,
-    migrate,
-)
+from broker.extensions import db, huey, config, migrate
 
 
 def create_app():
